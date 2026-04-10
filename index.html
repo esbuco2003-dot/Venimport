@@ -274,7 +274,7 @@
     <p class="section-label">Opciones de pago</p>
     <h2 class="section-title">Elige tu plan</h2>
     <div class="plans-grid">
-      <div class="plan-card" onclick="openModal('contado')">
+      <div class="plan-card" onclick="openModal('contado')" style="cursor:pointer">
         <p class="plan-type">Opción 1</p>
         <h3 class="plan-name">Pago de Contado</h3>
         <div class="plan-total">$1,550</div>
@@ -294,10 +294,10 @@
             </div>
           </li>
         </ul>
-        <div class="btn-secondary" style="width:100%;text-align:center;display:block;">Seleccionar este plan</div>
+        <button class="btn-secondary" style="width:100%;text-align:center;display:block;" onclick="openModal('contado')">Seleccionar este plan</button>
       </div>
 
-      <div class="plan-card featured" onclick="openModal('financiado')">
+      <div class="plan-card featured" onclick="openModal('financiado')" style="cursor:pointer">
         <div class="plan-popular">Más popular</div>
         <p class="plan-type">Opción 2</p>
         <h3 class="plan-name">Financiado</h3>
@@ -325,7 +325,7 @@
             </div>
           </li>
         </ul>
-        <div class="btn-primary" style="width:100%;text-align:center;display:block;">Seleccionar este plan</div>
+        <button class="btn-primary" style="width:100%;text-align:center;display:block;" onclick="openModal('financiado')">Seleccionar este plan</button>
       </div>
     </div>
   </div>
@@ -407,14 +407,14 @@
         <div class="info-row-icon">🏪</div>
         <div>
           <div class="info-row-label">Efectivo — Punto 1</div>
-          <div class="info-row-value">C.C Cima (Alto Barinas)</div>
+          <div class="info-row-value">OShop.ve — C.C Cima (Alto Barinas)</div>
         </div>
       </div>
       <div class="info-row">
         <div class="info-row-icon">🏪</div>
         <div>
           <div class="info-row-label">Efectivo — Punto 2</div>
-          <div class="info-row-value">C.C Galería La Francia (Alto Barinas)</div>
+          <div class="info-row-value">Nella Studio — C.C Galería La Francia (Alto Barinas)</div>
         </div>
       </div>
       <div class="info-row">
