@@ -114,8 +114,8 @@
   .step-label { color: var(--gray); font-size: 0.75rem; }
   .step-amount { color: var(--white); font-weight: 500; font-size: 1rem; }
 
-  .modal-overlay { display: flex; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 200; align-items: center; justify-content: center; padding: 1rem; visibility: hidden; opacity: 0; transition: opacity 0.2s, visibility 0.2s; pointer-events: none; }
-  .modal-overlay.active { visibility: visible; opacity: 1; pointer-events: all; }
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 200; align-items: center; justify-content: center; padding: 1rem; }
+  .modal-overlay.active { display: flex; }
   .modal { background: var(--dark2); border: 1px solid rgba(201,168,76,0.3); border-radius: 20px; padding: 2.5rem; max-width: 480px; width: 100%; position: relative; animation: fadeUp 0.3s ease; max-height: 90vh; overflow-y: auto; }
   .modal-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--gray); font-size: 1.8rem; cursor: pointer; line-height: 1; }
   .modal-close:hover { color: var(--white); }
