@@ -355,8 +355,8 @@
       <p>Método de pago de reserva ($300)</p>
       <div class="method-options">
         <div class="method-btn selected" id="btn-zelle" onclick="selectMethod('zelle')">💳 Zelle</div>
-        <div class="method-btn" id="btn-oshop" onclick="selectMethod('oshop')">🏪 OShop.ve</div>
-        <div class="method-btn" id="btn-nella" onclick="selectMethod('nella')">🏪 Nella Studio</div>
+        <div class="method-btn" id="btn-oshop" onclick="selectMethod('oshop')">🏪 C.C Cima</div>
+        <div class="method-btn" id="btn-nella" onclick="selectMethod('nella')">🏪 C.C Galería La Francia</div>
       </div>
     </div>
 
@@ -400,21 +400,21 @@
         <div class="info-row-icon">💳</div>
         <div>
           <div class="info-row-label">Zelle</div>
-          <div class="info-row-value">Esbuco2003@gmail.com</div>
+          <div class="info-row-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2461574651474b16141417644349454d480a474b49">[email&#160;protected]</a></div>
         </div>
       </div>
       <div class="info-row">
         <div class="info-row-icon">🏪</div>
         <div>
           <div class="info-row-label">Efectivo — Punto 1</div>
-          <div class="info-row-value">OShop.ve — CIMA planta baja</div>
+          <div class="info-row-value">C.C Cima (Alto Barinas)</div>
         </div>
       </div>
       <div class="info-row">
         <div class="info-row-icon">🏪</div>
         <div>
           <div class="info-row-label">Efectivo — Punto 2</div>
-          <div class="info-row-value">Nella Studio — Galería La Francia, local 13</div>
+          <div class="info-row-value">C.C Galería La Francia (Alto Barinas)</div>
         </div>
       </div>
       <div class="info-row">
@@ -439,7 +439,7 @@
   <p class="footer-copy">© 2026 Venimport · Beyond Borders</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   let selectedPlan = 'contado';
   let selectedMethod = 'zelle';
 
@@ -465,8 +465,8 @@
 
   const methods = {
     zelle: 'Zelle (Esbuco2003@gmail.com)',
-    oshop: 'Efectivo en OShop.ve — CIMA planta baja',
-    nella: 'Efectivo en Nella Studio — Galería La Francia, local 13'
+    oshop: 'Efectivo en C.C Cima (Alto Barinas)',
+    nella: 'Efectivo en C.C Galería La Francia (Alto Barinas)'
   };
 
   function openModal(plan) {
@@ -507,9 +507,4 @@
   }
 
   document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) { e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); });
-  });
-</script>
-</body>
-</html>
+  document.querySele
