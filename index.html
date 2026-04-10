@@ -439,74 +439,59 @@
   <p class="footer-copy">© 2026 Venimport · Beyond Borders</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  let selectedPlan = 'contado';
-  let selectedMethod = 'zelle';
-
-  const plans = {
-    contado: {
-      name: 'Pago de Contado',
-      total: '$1,550',
-      steps: [
-        { label: 'Ahora — reserva', amount: '$300' },
-        { label: 'Al recibir (26 Mayo 2026)', amount: '$1,250' }
-      ]
-    },
-    financiado: {
-      name: 'Financiado',
-      total: '$1,650',
-      steps: [
-        { label: 'Ahora — reserva', amount: '$300' },
-        { label: 'Al recibir (26 Mayo 2026)', amount: '$675' },
-        { label: '3 semanas después', amount: '$675' }
-      ]
-    }
-  };
-
-  const methods = {
-    zelle: 'Zelle (Esbuco2003@gmail.com)',
-    oshop: 'Efectivo en C.C Cima (Alto Barinas)',
-    nella: 'Efectivo en C.C Galería La Francia (Alto Barinas)'
-  };
+<script>
+  var selPlan = 'contado';
+  var selMethod = 'zelle';
 
   function openModal(plan) {
-    selectedPlan = plan;
-    document.getElementById('modal-badge').textContent = 'Plan ' + plans[plan].name;
-    updateSummary();
-    var overlay = document.getElementById('modal');
-    overlay.classList.add('active');
+    selPlan = plan;
+    var badge = plan === 'contado' ? 'Plan Contado' : 'Plan Financiado';
+    document.getElementById('modal-badge').textContent = badge;
+    var html = '';
+    html += '<div class="pay-row"><span class="lbl">Ahora - reserva</span><span class="amt">USD 300</span></div>';
+    if (plan === 'contado') {
+      html += '<div class="pay-row"><span class="lbl">Al recibir (26 Mayo 2026)</span><span class="amt">USD 1,250</span></div>';
+      html += '<div class="pay-row"><span class="lbl">Total</span><span class="amt">USD 1,550</span></div>';
+    } else {
+      html += '<div class="pay-row"><span class="lbl">Al recibir (26 Mayo 2026)</span><span class="amt">USD 675</span></div>';
+      html += '<div class="pay-row"><span class="lbl">3 semanas despues</span><span class="amt">USD 675</span></div>';
+      html += '<div class="pay-row"><span class="lbl">Total</span><span class="amt">USD 1,650</span></div>';
+    }
+    document.getElementById('pay-summary').innerHTML = html;
+    var m = document.getElementById('modal');
+    m.style.visibility = 'visible';
+    m.style.opacity = '1';
+    m.style.pointerEvents = 'all';
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
-    var overlay = document.getElementById('modal');
-    overlay.classList.remove('active');
+    var m = document.getElementById('modal');
+    m.style.visibility = 'hidden';
+    m.style.opacity = '0';
+    m.style.pointerEvents = 'none';
     document.body.style.overflow = '';
   }
 
-  function selectMethod(m) {
-    selectedMethod = m;
-    ['zelle','oshop','nella'].forEach(id => {
-      document.getElementById('btn-' + id).classList.toggle('selected', m === id);
-    });
-  }
-
-  function updateSummary() {
-    const p = plans[selectedPlan];
-    let html = p.steps.map(s => `<div class="pay-row"><span class="lbl">${s.label}</span><span class="amt">${s.amount}</span></div>`).join('');
-    html += `<div class="pay-row"><span class="lbl">Total</span><span class="amt">${p.total}</span></div>`;
-    document.getElementById('pay-summary').innerHTML = html;
+  function selectMethod(met) {
+    selMethod = met;
+    document.getElementById('btn-zelle').className = 'method-btn' + (met === 'zelle' ? ' selected' : '');
+    document.getElementById('btn-oshop').className = 'method-btn' + (met === 'oshop' ? ' selected' : '');
+    document.getElementById('btn-nella').className = 'method-btn' + (met === 'nella' ? ' selected' : '');
   }
 
   function enviarWhatsApp() {
-    const nombre = document.getElementById('f-nombre').value.trim();
-    const whatsapp = document.getElementById('f-whatsapp').value.trim();
-    const ciudad = document.getElementById('f-ciudad').value.trim();
+    var nombre = document.getElementById('f-nombre').value;
+    var whatsapp = document.getElementById('f-whatsapp').value;
+    var ciudad = document.getElementById('f-ciudad').value;
     if (!nombre || !whatsapp || !ciudad) { alert('Por favor completa todos los campos.'); return; }
-    const p = plans[selectedPlan];
-    const msg = `Hola, quiero reservar un iPhone 17 Pro Max con Venimport 📱\n\n*Mis datos:*\n• Nombre: ${nombre}\n• WhatsApp: ${whatsapp}\n• Ciudad: ${ciudad}\n\n*Plan elegido:* ${p.name} (${p.total})\n*Método de pago:* ${methods[selectedMethod]}\n\n¡Confirmo que quiero apartar mi unidad!`;
-    window.open('https://wa.me/15737050538?text=' + encodeURIComponent(msg), '_blank');
+    var planName = selPlan === 'contado' ? 'Contado (,550)' : 'Financiado (,650)';
+    var metodos = { zelle: 'Zelle - Esbuco2003@gmail.com', oshop: 'Efectivo C.C Cima (Alto Barinas)', nella: 'Efectivo C.C Galeria La Francia (Alto Barinas)' };
+    var msg = 'Hola, quiero reservar un iPhone 17 Pro Max con Venimport!' + '%0A%0A' + 'Nombre: ' + encodeURIComponent(nombre) + '%0A' + 'WhatsApp: ' + encodeURIComponent(whatsapp) + '%0A' + 'Ciudad: ' + encodeURIComponent(ciudad) + '%0A%0A' + 'Plan: ' + encodeURIComponent(planName) + '%0A' + 'Pago: ' + encodeURIComponent(metodos[selMethod]);
+    window.location.href = 'https://wa.me/15737050538?text=' + msg;
   }
 
-  document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-  document.querySele
+  document.getElementById('modal').onclick = function(e) { if (e.target === this) closeModal(); };
+</script>
+</body>
+</html>
