@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Venimport — iPhone 17 Pro Max</title>
+<title>Venimport — Beyond Borders</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -19,18 +19,20 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--dark); color: var(--white); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
 
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(8,8,8,0.95); backdrop-filter: blur(10px);
+    background: rgba(8,8,8,0.96); backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(201,168,76,0.2);
     padding: 0 2rem; height: 64px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold); letter-spacing: 4px; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold); letter-spacing: 4px; text-decoration: none; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { color: var(--gray-light); text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
 
+  /* HERO */
   .hero {
     min-height: 100vh; padding-top: 64px;
     display: grid; grid-template-columns: 1fr 1fr;
@@ -40,109 +42,68 @@
   .hero-text { animation: fadeUp 0.8s ease both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-  .badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gold); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
-    padding: 6px 16px; border-radius: 30px; margin-bottom: 1.5rem;
-  }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; padding: 6px 16px; border-radius: 30px; margin-bottom: 1.5rem; }
   .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
   .hero h1 span { color: var(--gold); }
-  .hero-model { font-size: 1rem; color: var(--gray); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
   .hero-desc { font-size: 1rem; color: var(--gray-light); line-height: 1.7; margin-bottom: 2rem; max-width: 440px; }
-  .hero-price { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; }
-  .hero-price-note { font-size: 0.8rem; color: var(--gray); margin-bottom: 2rem; }
-
-  .btn-primary {
-    display: inline-block; background: var(--gold); color: var(--dark);
-    font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 0.85rem;
-    letter-spacing: 2px; text-transform: uppercase; padding: 16px 40px;
-    border-radius: 4px; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; margin-right: 1rem;
-  }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-  .btn-secondary {
-    display: inline-block; background: transparent; color: var(--gold);
-    font-family: 'Barlow', sans-serif; font-weight: 500; font-size: 0.85rem;
-    letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px;
-    border-radius: 4px; text-decoration: none; transition: all 0.3s;
-    border: 1px solid rgba(201,168,76,0.4); cursor: pointer;
-  }
-  .btn-secondary:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
 
   .hero-img { display: flex; justify-content: center; align-items: center; animation: fadeUp 0.8s 0.2s ease both; }
-  .hero-img img { max-width: 100%; max-height: 600px; object-fit: contain; filter: drop-shadow(0 40px 80px rgba(201,168,76,0.15)); animation: float 4s ease-in-out infinite; }
+  .hero-img img { max-width: 100%; max-height: 580px; object-fit: contain; filter: drop-shadow(0 40px 80px rgba(201,168,76,0.15)); animation: float 4s ease-in-out infinite; }
   @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
 
-  .stock-bar {
-    background: var(--dark2); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15);
-    padding: 1.2rem 3rem; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
-  }
+  .btn-primary { display: inline-block; background: var(--gold); color: var(--dark); font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; padding: 14px 36px; border-radius: 4px; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; margin-right: 1rem; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary { display: inline-block; background: transparent; color: var(--gold); font-family: 'Barlow', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; padding: 14px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s; border: 1px solid rgba(201,168,76,0.4); cursor: pointer; }
+  .btn-secondary:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+
+  /* STOCK BAR */
+  .stock-bar { background: var(--dark2); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.2rem 3rem; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
   .stock-item { text-align: center; }
-  .stock-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--gold); }
+  .stock-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--gold); }
   .stock-label { font-size: 0.7rem; color: var(--gray); letter-spacing: 2px; text-transform: uppercase; }
 
-  .features { max-width: 1200px; margin: 0 auto; padding: 6rem 3rem; }
+  /* SECTION */
   .section-label { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; margin-bottom: 3rem; }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .feature-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 2rem; transition: border-color 0.3s, transform 0.3s; }
-  .feature-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
-  .feature-icon { width: 48px; height: 48px; background: rgba(201,168,76,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.2rem; }
-  .feature-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; }
-  .feature-desc { font-size: 0.9rem; color: var(--gray); line-height: 1.6; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .section-sub { font-size: 0.95rem; color: var(--gray); margin-bottom: 3rem; }
 
+  /* PLANS */
   .plans { background: var(--dark2); padding: 6rem 3rem; border-top: 1px solid rgba(255,255,255,0.05); }
   .plans-inner { max-width: 1200px; margin: 0 auto; }
   .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
-
   .plan-card { background: var(--dark3); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2.5rem; position: relative; transition: all 0.3s; cursor: pointer; }
   .plan-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
   .plan-card.featured { border-color: var(--gold); background: linear-gradient(135deg, var(--dark3) 0%, rgba(201,168,76,0.05) 100%); }
   .plan-popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--dark); font-size: 0.65rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
   .plan-type { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-bottom: 0.5rem; }
   .plan-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem; }
-  .plan-total { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--gold); margin-bottom: 2rem; }
+  .plan-total { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold); margin-bottom: 2rem; }
   .plan-steps { list-style: none; margin-bottom: 2rem; }
   .plan-steps li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .plan-steps li:last-child { border-bottom: none; }
   .step-circle { width: 28px; height: 28px; border-radius: 50%; background: rgba(201,168,76,0.15); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; }
   .step-info { flex: 1; }
   .step-label { color: var(--gray); font-size: 0.75rem; }
-  .step-amount { color: var(--white); font-weight: 500; font-size: 1rem; }
+  .step-amount { color: var(--white); font-weight: 500; }
 
-  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 200; align-items: center; justify-content: center; padding: 1rem; }
-  .modal-overlay.active { display: flex; }
-  .modal { background: var(--dark2); border: 1px solid rgba(201,168,76,0.3); border-radius: 20px; padding: 2.5rem; max-width: 480px; width: 100%; position: relative; animation: fadeUp 0.3s ease; max-height: 90vh; overflow-y: auto; }
-  .modal-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--gray); font-size: 1.8rem; cursor: pointer; line-height: 1; }
-  .modal-close:hover { color: var(--white); }
-  .modal-plan-badge { display: inline-block; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 1rem; }
-  .modal h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; margin-bottom: 0.3rem; }
-  .modal-sub { font-size: 0.85rem; color: var(--gray); margin-bottom: 1.5rem; }
+  /* PRODUCTS SECTION */
+  .products-section { max-width: 1200px; margin: 0 auto; padding: 6rem 3rem; }
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .product-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
+  .product-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
+  .product-img { width: 100%; height: 220px; object-fit: contain; background: var(--dark3); padding: 1.5rem; }
+  .product-info { padding: 1.2rem; }
+  .product-category { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .product-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; color: var(--white); }
+  .product-desc { font-size: 0.8rem; color: var(--gray); margin-bottom: 1rem; line-height: 1.5; }
+  .product-price { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.8rem; }
+  .product-btn { display: block; width: 100%; text-align: center; background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--gold); padding: 8px; border-radius: 6px; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-family: 'Barlow', sans-serif; transition: all 0.2s; text-decoration: none; }
+  .product-btn:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
 
-  .form-group { margin-bottom: 1rem; }
-  .form-group label { display: block; font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
-  .form-group input { width: 100%; background: var(--dark3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 14px; color: var(--white); font-family: 'Barlow', sans-serif; font-size: 0.95rem; transition: border-color 0.2s; outline: none; }
-  .form-group input:focus { border-color: var(--gold); }
-
-  .payment-summary { background: var(--dark3); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.2rem; }
-  .pay-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .pay-row:last-child { border-bottom: none; font-weight: 600; }
-  .pay-row .lbl { color: var(--gray); }
-  .pay-row .amt { color: var(--gold); }
-
-  .method-section { margin-bottom: 1.2rem; }
-  .method-section p { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-  .method-options { display: flex; gap: 8px; flex-wrap: wrap; }
-  .method-btn { flex: 1; min-width: 120px; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: var(--dark3); color: var(--gray-light); font-size: 0.82rem; cursor: pointer; transition: all 0.2s; font-family: 'Barlow', sans-serif; text-align: center; }
-  .method-btn.selected { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
-
-  .submit-btn { width: 100%; background: #25D366; color: white; border: none; padding: 15px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: 'Barlow', sans-serif; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .submit-btn:hover { background: #20BA58; transform: translateY(-1px); }
-
+  /* RESERVE SECTION */
   .reserve { max-width: 1200px; margin: 0 auto; padding: 6rem 3rem; }
   .reserve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
   .steps-list { list-style: none; }
@@ -161,6 +122,36 @@
   .whatsapp-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: #25D366; color: white; border: none; padding: 14px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.2s; font-family: 'Barlow', sans-serif; margin-top: 1.5rem; }
   .whatsapp-btn:hover { background: #20BA58; transform: translateY(-1px); }
 
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 200; align-items: center; justify-content: center; padding: 1rem; }
+  .modal-overlay.active { display: flex; }
+  .modal { background: var(--dark2); border: 1px solid rgba(201,168,76,0.3); border-radius: 20px; padding: 2.5rem; max-width: 480px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto; }
+  .modal-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--gray); font-size: 1.8rem; cursor: pointer; line-height: 1; }
+  .modal-close:hover { color: var(--white); }
+  .modal-plan-badge { display: inline-block; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 1rem; }
+  .modal h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .modal-sub { font-size: 0.85rem; color: var(--gray); margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .form-group input { width: 100%; background: var(--dark3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 14px; color: var(--white); font-family: 'Barlow', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+  .form-group input:focus { border-color: var(--gold); }
+  .payment-summary { background: var(--dark3); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.2rem; }
+  .pay-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .pay-row:last-child { border-bottom: none; font-weight: 600; }
+  .pay-row .lbl { color: var(--gray); }
+  .pay-row .amt { color: var(--gold); }
+  .method-section { margin-bottom: 1.2rem; }
+  .method-section p { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .method-options { display: flex; gap: 8px; flex-wrap: wrap; }
+  .method-btn { flex: 1; min-width: 100px; padding: 10px 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: var(--dark3); color: var(--gray-light); font-size: 0.8rem; cursor: pointer; transition: all 0.2s; font-family: 'Barlow', sans-serif; text-align: center; }
+  .method-btn.selected { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+  .submit-btn { width: 100%; background: #25D366; color: white; border: none; padding: 15px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: 'Barlow', sans-serif; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .submit-btn:hover { background: #20BA58; }
+
+  /* DIVIDER */
+  .section-divider { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 0; }
+
+  /* FOOTER */
   footer { background: var(--dark2); border-top: 1px solid rgba(201,168,76,0.2); padding: 3rem; text-align: center; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold); letter-spacing: 4px; margin-bottom: 0.5rem; }
   .footer-sub { font-size: 0.75rem; color: var(--gray); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2rem; }
@@ -171,42 +162,48 @@
 
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; padding-top: 80px; text-align: center; }
-    .hero h1 { font-size: 3rem; }
+    .hero h1 { font-size: 2.8rem; }
     .hero-desc { margin: 0 auto 2rem; }
     .hero-img { order: -1; }
     .hero-img img { max-height: 300px; }
-    .features-grid, .plans-grid, .reserve-grid { grid-template-columns: 1fr; }
+    .plans-grid, .reserve-grid { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
-    .features, .reserve { padding: 4rem 1.5rem; }
-    .plans { padding: 4rem 1.5rem; }
+    .plans, .products-section, .reserve { padding: 4rem 1.5rem; }
+    .stock-bar { gap: 1.5rem; padding: 1rem; }
     footer { padding: 2rem 1.5rem; }
     .footer-contact { flex-direction: column; gap: 1rem; }
-    .stock-bar { gap: 1.5rem; padding: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .products-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">VENIMPORT</div>
+  <a class="nav-logo" href="#">VENIMPORT</a>
   <ul class="nav-links">
-    <li><a href="#producto">Producto</a></li>
-    <li><a href="#planes">Planes</a></li>
+    <li><a href="#iphone">iPhone</a></li>
+    <li><a href="#suplementos">Suplementos</a></li>
+    <li><a href="#perfumes">Perfumes</a></li>
+    <li><a href="#cabello">Cabello</a></li>
     <li><a href="#reservar">Reservar</a></li>
   </ul>
 </nav>
 
-<section class="hero" id="producto">
+<!-- HERO IPHONE -->
+<section class="hero" id="iphone">
   <div class="hero-text">
     <div class="badge"><span class="badge-dot"></span>Disponible por encargo</div>
-    <p class="hero-model">Apple · 2025</p>
+    <p style="font-size:0.9rem;color:var(--gray);letter-spacing:3px;text-transform:uppercase;margin-bottom:0.5rem;">Apple · 2025</p>
     <h1>iPhone 17<br><span>Pro Max</span></h1>
     <p class="hero-desc">Importado directamente desde Estados Unidos. Entrega personal en Venezuela — 26 de Mayo 2026.</p>
-    <div class="hero-price">Desde $1,550</div>
-    <p class="hero-price-note">Pago de contado · También disponible financiado</p>
-    <a href="#planes" class="btn-primary">Ver planes</a>
-    <a href="#reservar" class="btn-secondary">Cómo reservar</a>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--gold);margin-bottom:0.5rem;">Desde $1,550</p>
+    <p style="font-size:0.8rem;color:var(--gray);margin-bottom:2rem;">Pago de contado · También disponible financiado</p>
+    <button class="btn-primary" onclick="openModal('contado')">Reservar ahora</button>
+    <a href="#planes" class="btn-secondary">Ver planes</a>
   </div>
   <div class="hero-img">
     <img src="iphone.jpg" alt="iPhone 17 Pro Max" onerror="this.style.display='none'">
@@ -214,220 +211,283 @@
 </section>
 
 <div class="stock-bar">
-  <div class="stock-item">
-    <div class="stock-num">Limitadas</div>
-    <div class="stock-label">Unidades disponibles</div>
-  </div>
-  <div class="stock-item">
-    <div class="stock-num">$300</div>
-    <div class="stock-label">Para reservar</div>
-  </div>
-  <div class="stock-item">
-    <div class="stock-num">26 Mayo 2026</div>
-    <div class="stock-label">Llega a Venezuela</div>
-  </div>
-  <div class="stock-item">
-    <div class="stock-num">Sellado</div>
-    <div class="stock-label">De fábrica</div>
-  </div>
+  <div class="stock-item"><div class="stock-num">Limitadas</div><div class="stock-label">Unidades disponibles</div></div>
+  <div class="stock-item"><div class="stock-num">$300</div><div class="stock-label">Para reservar</div></div>
+  <div class="stock-item"><div class="stock-num">26 Mayo 2026</div><div class="stock-label">Llega a Venezuela</div></div>
+  <div class="stock-item"><div class="stock-num">Sellado</div><div class="stock-label">De fábrica</div></div>
 </div>
 
-<section class="features">
-  <p class="section-label">Por qué Venimport</p>
-  <h2 class="section-title">Beyond Borders.<br>Tu tienda global.</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">📦</div>
-      <h3 class="feature-title">Sellado de fábrica</h3>
-      <p class="feature-desc">Comprado directamente en tienda oficial Apple en Estados Unidos. Caja sellada, sin activar.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🤝</div>
-      <h3 class="feature-title">Entrega personal</h3>
-      <p class="feature-desc">Te entregamos el teléfono en mano el 26 de Mayo 2026 directamente en Venezuela.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🛡️</div>
-      <h3 class="feature-title">Garantía Apple</h3>
-      <p class="feature-desc">Todo iPhone viene con garantía oficial de Apple de 1 año desde la fecha de compra.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💳</div>
-      <h3 class="feature-title">Financiamiento disponible</h3>
-      <p class="feature-desc">Reserva con solo $300 y divide el resto en cómodas cuotas. Sin complicaciones.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🏪</div>
-      <h3 class="feature-title">Pago flexible</h3>
-      <p class="feature-desc">Acepta Zelle, o efectivo en dos puntos físicos en Venezuela.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💬</div>
-      <h3 class="feature-title">Soporte directo</h3>
-      <p class="feature-desc">Comunicación directa por WhatsApp durante todo el proceso. Sin intermediarios.</p>
-    </div>
-  </div>
-</section>
-
+<!-- PLANES IPHONE -->
 <section class="plans" id="planes">
   <div class="plans-inner">
-    <p class="section-label">Opciones de pago</p>
-    <h2 class="section-title">Elige tu plan</h2>
-    <div class="plans-grid">
-      <div class="plan-card" onclick="openModal('contado')" style="cursor:pointer">
-        <p class="plan-type">Opción 1</p>
-        <h3 class="plan-name">Pago de Contado</h3>
+    <p class="section-label">iPhone 17 Pro Max</p>
+    <h2 class="section-title">Elige tu plan de pago</h2>
+
+    <!-- CONTADO -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--gold);margin:2rem 0 1rem;">Pago de Contado</h3>
+    <div class="plans-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:3rem;">
+      <div class="plan-card" onclick="openModal('contado_256')">
+        <p class="plan-type">256 GB</p>
+        <h3 class="plan-name">Contado</h3>
         <div class="plan-total">$1,550</div>
         <ul class="plan-steps">
-          <li>
-            <div class="step-circle">1</div>
-            <div class="step-info">
-              <div class="step-label">Ahora — para reservar</div>
-              <div class="step-amount">$300</div>
-            </div>
-          </li>
-          <li>
-            <div class="step-circle">2</div>
-            <div class="step-info">
-              <div class="step-label">Al recibir el teléfono (26 Mayo 2026)</div>
-              <div class="step-amount">$1,250</div>
-            </div>
-          </li>
+          <li><div class="step-circle">1</div><div class="step-info"><div class="step-label">Adelanto para apartar</div><div class="step-amount">$300</div></div></li>
+          <li><div class="step-circle">2</div><div class="step-info"><div class="step-label">Al recibir (26 Mayo 2026)</div><div class="step-amount">$1,250</div></div></li>
         </ul>
-        <button class="btn-secondary" style="width:100%;text-align:center;display:block;" onclick="openModal('contado')">Seleccionar este plan</button>
+        <button class="btn-secondary" style="width:100%;text-align:center;display:block;" onclick="openModal('contado_256')">Seleccionar</button>
       </div>
+      <div class="plan-card" onclick="openModal('contado_512')">
+        <p class="plan-type">512 GB</p>
+        <h3 class="plan-name">Contado</h3>
+        <div class="plan-total">$1,750</div>
+        <ul class="plan-steps">
+          <li><div class="step-circle">1</div><div class="step-info"><div class="step-label">Adelanto para apartar</div><div class="step-amount">$400</div></div></li>
+          <li><div class="step-circle">2</div><div class="step-info"><div class="step-label">Al recibir (26 Mayo 2026)</div><div class="step-amount">$1,350</div></div></li>
+        </ul>
+        <button class="btn-secondary" style="width:100%;text-align:center;display:block;" onclick="openModal('contado_512')">Seleccionar</button>
+      </div>
+      <div class="plan-card" onclick="openModal('contado_1tb')">
+        <p class="plan-type">1 TB</p>
+        <h3 class="plan-name">Contado</h3>
+        <div class="plan-total">$1,950</div>
+        <ul class="plan-steps">
+          <li><div class="step-circle">1</div><div class="step-info"><div class="step-label">Adelanto para apartar</div><div class="step-amount">$600</div></div></li>
+          <li><div class="step-circle">2</div><div class="step-info"><div class="step-label">Al recibir (26 Mayo 2026)</div><div class="step-amount">$1,350</div></div></li>
+        </ul>
+        <button class="btn-secondary" style="width:100%;text-align:center;display:block;" onclick="openModal('contado_1tb')">Seleccionar</button>
+      </div>
+    </div>
 
-      <div class="plan-card featured" onclick="openModal('financiado')" style="cursor:pointer">
+    <!-- FINANCIADO -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--gold);margin:0 0 1rem;">Financiado</h3>
+    <div class="plans-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="plan-card featured" onclick="openModal('financiado_256')">
         <div class="plan-popular">Más popular</div>
-        <p class="plan-type">Opción 2</p>
+        <p class="plan-type">256 GB</p>
         <h3 class="plan-name">Financiado</h3>
         <div class="plan-total">$1,650</div>
         <ul class="plan-steps">
-          <li>
-            <div class="step-circle">1</div>
-            <div class="step-info">
-              <div class="step-label">Ahora — para reservar</div>
-              <div class="step-amount">$300</div>
-            </div>
-          </li>
-          <li>
-            <div class="step-circle">2</div>
-            <div class="step-info">
-              <div class="step-label">Al recibir el teléfono (26 Mayo 2026)</div>
-              <div class="step-amount">$675</div>
-            </div>
-          </li>
-          <li>
-            <div class="step-circle">3</div>
-            <div class="step-info">
-              <div class="step-label">3 semanas después</div>
-              <div class="step-amount">$675</div>
-            </div>
-          </li>
+          <li><div class="step-circle">1</div><div class="step-info"><div class="step-label">Adelanto para apartar</div><div class="step-amount">$300</div></div></li>
+          <li><div class="step-circle">2</div><div class="step-info"><div class="step-label">Al recibir (26 Mayo 2026)</div><div class="step-amount">$675</div></div></li>
+          <li><div class="step-circle">3</div><div class="step-info"><div class="step-label">3 semanas después</div><div class="step-amount">$675</div></div></li>
         </ul>
-        <button class="btn-primary" style="width:100%;text-align:center;display:block;" onclick="openModal('financiado')">Seleccionar este plan</button>
+        <button class="btn-primary" style="width:100%;text-align:center;display:block;" onclick="openModal('financiado_256')">Seleccionar</button>
+      </div>
+      <div class="plan-card featured" onclick="openModal('financiado_512')">
+        <p class="plan-type">512 GB</p>
+        <h3 class="plan-name">Financiado</h3>
+        <div class="plan-total">$1,850</div>
+        <ul class="plan-steps">
+          <li><div class="step-circle">1</div><div class="step-info"><div class="step-label">Adelanto para apartar</div><div class="step-amount">$400</div></div></li>
+          <li><div class="step-circle">2</div><div class="step-info"><div class="step-label">Al recibir (26 Mayo 2026)</div><div class="step-amount">$725</div></div></li>
+          <li><div class="step-circle">3</div><div class="step-info"><div class="step-label">3 semanas después</div><div class="step-amount">$725</div></div></li>
+        </ul>
+        <button class="btn-primary" style="width:100%;text-align:center;display:block;" onclick="openModal('financiado_512')">Seleccionar</button>
+      </div>
+      <div class="plan-card featured" onclick="openModal('financiado_1tb')">
+        <p class="plan-type">1 TB</p>
+        <h3 class="plan-name">Financiado</h3>
+        <div class="plan-total">$2,150</div>
+        <ul class="plan-steps">
+          <li><div class="step-circle">1</div><div class="step-info"><div class="step-label">Adelanto para apartar</div><div class="step-amount">$600</div></div></li>
+          <li><div class="step-circle">2</div><div class="step-info"><div class="step-label">Al recibir (26 Mayo 2026)</div><div class="step-amount">$775</div></div></li>
+          <li><div class="step-circle">3</div><div class="step-info"><div class="step-label">3 semanas después</div><div class="step-amount">$775</div></div></li>
+        </ul>
+        <button class="btn-primary" style="width:100%;text-align:center;display:block;" onclick="openModal('financiado_1tb')">Seleccionar</button>
       </div>
     </div>
   </div>
 </section>
 
+<hr class="section-divider">
+
+<!-- SUPLEMENTOS -->
+<section class="products-section" id="suplementos">
+  <p class="section-label">Venimport</p>
+  <h2 class="section-title">Suplementos</h2>
+  <p class="section-sub">Proteínas y vitaminas importadas directamente desde EE.UU.</p>
+  <div class="products-grid">
+    <div class="product-card">
+      <img class="product-img" src="img_protein_5lb.jpg" alt="Nutrex Whey 5lbs" onerror="this.style.background='#1a1a1a'">
+      <div class="product-info">
+        <div class="product-category">Proteína</div>
+        <div class="product-name">Nutrex 100% Whey 5lbs</div>
+        <div class="product-desc">64 porciones · Chocolate · Alta calidad para ganar músculo</div>
+        <div class="product-price">Consultar precio</div>
+        <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20Nutrex%20Whey%205lbs%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-img" src="img_protein_2lb.jpg" alt="Nutrex Whey 2lbs" onerror="this.style.background='#1a1a1a'">
+      <div class="product-info">
+        <div class="product-category">Proteína</div>
+        <div class="product-name">Nutrex 100% Whey 2lbs</div>
+        <div class="product-desc">26 porciones · Chocolate · Ideal para comenzar</div>
+        <div class="product-price">Consultar precio</div>
+        <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20Nutrex%20Whey%202lbs%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-img" src="img_c1000.jpg" alt="NOW C-1000" onerror="this.style.background='#1a1a1a'">
+      <div class="product-info">
+        <div class="product-category">Vitamina</div>
+        <div class="product-name">NOW C-1000 Rose Hip</div>
+        <div class="product-desc">100 tabletas · Vitamina C 1000mg · Antioxidante</div>
+        <div class="product-price">Consultar precio</div>
+        <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20NOW%20C-1000%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-img" src="img_zinc.jpg" alt="NOW Zinc" onerror="this.style.background='#1a1a1a'">
+      <div class="product-info">
+        <div class="product-category">Vitamina</div>
+        <div class="product-name">NOW Zinc Gluconate 50mg</div>
+        <div class="product-desc">250 tabletas · Soporte inmune · Funciones enzimáticas</div>
+        <div class="product-price">Consultar precio</div>
+        <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20NOW%20Zinc%2050mg%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-img" src="img_magnesium.jpg" alt="Magnesium" onerror="this.style.background='#1a1a1a'">
+      <div class="product-info">
+        <div class="product-category">Vitamina</div>
+        <div class="product-name">Nature's Bounty Magnesium 500mg</div>
+        <div class="product-desc">200 tabletas · Alta potencia · Soporte muscular y óseo</div>
+        <div class="product-price">Consultar precio</div>
+        <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20Magnesium%20500mg%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PERFUMES -->
+<section class="products-section" id="perfumes" style="background:var(--dark2);max-width:100%;padding:6rem 3rem;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">Venimport</p>
+    <h2 class="section-title">Perfumes</h2>
+    <p class="section-sub">Fragancias importadas · Eau de Parfum de larga duración</p>
+    <div class="products-grid">
+      <div class="product-card">
+        <img class="product-img" src="img_italia.jpg" alt="Rayhaan Italia" onerror="this.style.background='#1a1a1a'">
+        <div class="product-info">
+          <div class="product-category">Eau de Parfum · Para Hombre</div>
+          <div class="product-name">Rayhaan Italia</div>
+          <div class="product-desc">Notas cítricas, especiadas y aromáticas. Sofisticado y de larga duración.</div>
+          <div class="product-price">Consultar precio</div>
+          <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20Rayhaan%20Italia%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="img_afnan.jpg" alt="Afnan Lynked" onerror="this.style.background='#1a1a1a'">
+        <div class="product-info">
+          <div class="product-category">Eau de Parfum · Para Hombre</div>
+          <div class="product-name">Afnan Lynked Freedom</div>
+          <div class="product-desc">3.4oz · Fragancia fresca y moderna. Perfecta para el uso diario.</div>
+          <div class="product-price">Consultar precio</div>
+          <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20Afnan%20Lynked%20Freedom%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="img_snow.jpg" alt="Khadlaj Shiyaaka Snow" onerror="this.style.background='#1a1a1a'">
+        <div class="product-info">
+          <div class="product-category">Eau de Parfum · Unisex</div>
+          <div class="product-name">Khadlaj Shiyaaka Snow</div>
+          <div class="product-desc">Notas cítricas, maderosas y especiadas. Elegante y refinado.</div>
+          <div class="product-price">Consultar precio</div>
+          <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20Khadlaj%20Shiyaaka%20Snow%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="img_acquatica.jpg" alt="Rayhaan Aquatica" onerror="this.style.background='#1a1a1a'">
+        <div class="product-info">
+          <div class="product-category">Eau de Parfum · Unisex</div>
+          <div class="product-name">Rayhaan Aquatica</div>
+          <div class="product-desc">Notas frescas, marinas y cítricas. Ideal para el día a día.</div>
+          <div class="product-price">Consultar precio</div>
+          <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20el%20Rayhaan%20Aquatica%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CABELLO -->
+<section class="products-section" id="cabello">
+  <p class="section-label">Venimport</p>
+  <h2 class="section-title">Essentials para el Cabello</h2>
+  <p class="section-sub">Herramientas profesionales importadas desde EE.UU.</p>
+  <div class="products-grid">
+    <div class="product-card">
+      <img class="product-img" src="img_flat_iron.jpg" alt="Plancha alisadora" onerror="this.style.background='#1a1a1a'">
+      <div class="product-info">
+        <div class="product-category">Herramienta</div>
+        <div class="product-name">Plancha Alisadora Cerámica</div>
+        <div class="product-desc">Placas de cerámica · Alisado suave y profesional en casa</div>
+        <div class="product-price">Consultar precio</div>
+        <a href="https://wa.me/15737050538?text=Hola%2C%20me%20interesa%20la%20Plancha%20Alisadora%20de%20Venimport" target="_blank" class="product-btn">💬 Consultar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- RESERVAR IPHONE -->
+<section class="reserve" id="reservar">
+  <p class="section-label">iPhone 17 Pro Max</p>
+  <h2 class="section-title">Reserva en 3 pasos</h2>
+  <div class="reserve-grid">
+    <ul class="steps-list">
+      <li class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content"><h4>Elige tu plan y completa tus datos</h4><p>Selecciona el plan que prefieras y llena el formulario con tu nombre, WhatsApp y ciudad.</p></div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content"><h4>Paga los $300 de reserva</h4><p>Por Zelle o en efectivo en nuestros puntos físicos en Venezuela. Envíanos el comprobante.</p></div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-content"><h4>Recibe tu iPhone el 26 de Mayo 2026</h4><p>Te entregamos personalmente y pagas el resto según tu plan.</p></div>
+      </li>
+    </ul>
+    <div class="info-box">
+      <div class="info-box-title">Información de pago</div>
+      <div class="info-row"><div class="info-row-icon">💳</div><div><div class="info-row-label">Zelle</div><div class="info-row-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fdb88e9f889e92cfcdcdcebd9a909c9491d39e9290">[email&#160;protected]</a></div></div></div>
+      <div class="info-row"><div class="info-row-icon">🏪</div><div><div class="info-row-label">Efectivo — Punto 1</div><div class="info-row-value">OShop.ve — C.C Cima (Alto Barinas)</div></div></div>
+      <div class="info-row"><div class="info-row-icon">🏪</div><div><div class="info-row-label">Efectivo — Punto 2</div><div class="info-row-value">Nella Studio — C.C Galería La Francia (Alto Barinas)</div></div></div>
+      <div class="info-row"><div class="info-row-icon">📅</div><div><div class="info-row-label">Entrega en Venezuela</div><div class="info-row-value">26 de Mayo 2026</div></div></div>
+      <a href="https://wa.me/15737050538?text=Hola%2C%20quiero%20información%20sobre%20Venimport" target="_blank" class="whatsapp-btn">💬 Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
     <div class="modal-plan-badge" id="modal-badge">Plan Contado</div>
     <h3>Reserva tu iPhone 17 Pro Max</h3>
-    <p class="modal-sub">Completa tus datos y te contactamos por WhatsApp para confirmar.</p>
-
-    <div class="form-group">
-      <label>Nombre completo</label>
-      <input type="text" id="f-nombre" placeholder="Tu nombre y apellido">
-    </div>
-    <div class="form-group">
-      <label>WhatsApp (con código de país)</label>
-      <input type="tel" id="f-whatsapp" placeholder="+58 424-000-0000">
-    </div>
-    <div class="form-group">
-      <label>Ciudad en Venezuela</label>
-      <input type="text" id="f-ciudad" placeholder="Ej: Caracas, Barinas, Valencia...">
-    </div>
-
+    <p class="modal-sub">Completa tus datos y te contactamos por WhatsApp.</p>
+    <div class="form-group"><label>Nombre completo</label><input type="text" id="f-nombre" placeholder="Tu nombre y apellido"></div>
+    <div class="form-group"><label>WhatsApp</label><input type="tel" id="f-whatsapp" placeholder="+58 424-000-0000"></div>
+    <div class="form-group"><label>Ciudad en Venezuela</label><input type="text" id="f-ciudad" placeholder="Ej: Barinas, Caracas..."></div>
     <div class="method-section">
-      <p>Método de pago de reserva ($300)</p>
+      <p>Método de pago ($300 reserva)</p>
       <div class="method-options">
         <div class="method-btn selected" id="btn-zelle" onclick="selectMethod('zelle')">💳 Zelle</div>
         <div class="method-btn" id="btn-oshop" onclick="selectMethod('oshop')">🏪 C.C Cima</div>
-        <div class="method-btn" id="btn-nella" onclick="selectMethod('nella')">🏪 C.C Galería La Francia</div>
+        <div class="method-btn" id="btn-nella" onclick="selectMethod('nella')">🏪 C.C Galería</div>
       </div>
     </div>
-
     <div class="payment-summary" id="pay-summary"></div>
-
     <button class="submit-btn" onclick="enviarWhatsApp()">💬 Enviar reserva por WhatsApp</button>
   </div>
 </div>
-
-<section class="reserve" id="reservar">
-  <p class="section-label">Proceso de reserva</p>
-  <h2 class="section-title">Reserva tu iPhone<br>en 3 pasos</h2>
-  <div class="reserve-grid">
-    <ul class="steps-list">
-      <li class="step-item">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>Elige tu plan y completa tus datos</h4>
-          <p>Selecciona arriba el plan que prefieras y llena el formulario con tu nombre, WhatsApp y ciudad.</p>
-        </div>
-      </li>
-      <li class="step-item">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>Paga los $300 de reserva</h4>
-          <p>Por Zelle, o en efectivo en cualquiera de nuestros dos puntos físicos en Venezuela. Envíanos el comprobante por WhatsApp.</p>
-        </div>
-      </li>
-      <li class="step-item">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>Recibe tu iPhone el 26 de Mayo 2026</h4>
-          <p>Te entregamos personalmente en Venezuela y pagas el resto según el plan elegido.</p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="info-box">
-      <div class="info-box-title">Información de pago</div>
-      <div class="info-row">
-        <div class="info-row-icon">💳</div>
-        <div>
-          <div class="info-row-label">Zelle</div>
-          <div class="info-row-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2461574651474b16141417644349454d480a474b49">[email&#160;protected]</a></div>
-        </div>
-      </div>
-      <div class="info-row">
-        <div class="info-row-icon">🏪</div>
-        <div>
-          <div class="info-row-label">Efectivo — Punto 1</div>
-          <div class="info-row-value">OShop.ve — C.C Cima (Alto Barinas)</div>
-        </div>
-      </div>
-      <div class="info-row">
-        <div class="info-row-icon">🏪</div>
-        <div>
-          <div class="info-row-label">Efectivo — Punto 2</div>
-          <div class="info-row-value">Nella Studio — C.C Galería La Francia (Alto Barinas)</div>
-        </div>
-      </div>
-      <div class="info-row">
-        <div class="info-row-icon">📅</div>
-        <div>
-          <div class="info-row-label">Fecha de llegada a Venezuela</div>
-          <div class="info-row-value">26 de Mayo 2026</div>
-        </div>
-      </div>
-      <a href="https://wa.me/15737050538?text=Hola%2C%20quiero%20información%20sobre%20el%20iPhone%2017%20Pro%20Max%20de%20Venimport" target="_blank" class="whatsapp-btn">💬 Escribir por WhatsApp</a>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="footer-logo">VENIMPORT</div>
@@ -439,59 +499,59 @@
   <p class="footer-copy">© 2026 Venimport · Beyond Borders</p>
 </footer>
 
-<script>
-  var selPlan = 'contado';
-  var selMethod = 'zelle';
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  let selectedPlan = 'contado';
+  let selectedMethod = 'zelle';
+
+  const plans = {
+    contado_256: { name: 'Contado 256GB', total: '$1,550', steps: [{ label: 'Adelanto para apartar', amount: '$300' }, { label: 'Al recibir (26 Mayo 2026)', amount: '$1,250' }] },
+    contado_512: { name: 'Contado 512GB', total: '$1,750', steps: [{ label: 'Adelanto para apartar', amount: '$400' }, { label: 'Al recibir (26 Mayo 2026)', amount: '$1,350' }] },
+    contado_1tb: { name: 'Contado 1TB', total: '$1,950', steps: [{ label: 'Adelanto para apartar', amount: '$600' }, { label: 'Al recibir (26 Mayo 2026)', amount: '$1,350' }] },
+    financiado_256: { name: 'Financiado 256GB', total: '$1,650', steps: [{ label: 'Adelanto para apartar', amount: '$300' }, { label: 'Al recibir (26 Mayo 2026)', amount: '$675' }, { label: '3 semanas después', amount: '$675' }] },
+    financiado_512: { name: 'Financiado 512GB', total: '$1,850', steps: [{ label: 'Adelanto para apartar', amount: '$400' }, { label: 'Al recibir (26 Mayo 2026)', amount: '$725' }, { label: '3 semanas después', amount: '$725' }] },
+    financiado_1tb: { name: 'Financiado 1TB', total: '$2,150', steps: [{ label: 'Adelanto para apartar', amount: '$600' }, { label: 'Al recibir (26 Mayo 2026)', amount: '$775' }, { label: '3 semanas después', amount: '$775' }] },
+  };
+
+  const methods = {
+    zelle: 'Zelle (Esbuco2003@gmail.com)',
+    oshop: 'Efectivo en C.C Cima — OShop.ve',
+    nella: 'Efectivo en C.C Galería La Francia — Nella Studio'
+  };
 
   function openModal(plan) {
-    selPlan = plan;
-    var badge = plan === 'contado' ? 'Plan Contado' : 'Plan Financiado';
-    document.getElementById('modal-badge').textContent = badge;
-    var html = '';
-    html += '<div class="pay-row"><span class="lbl">Ahora - reserva</span><span class="amt">USD 300</span></div>';
-    if (plan === 'contado') {
-      html += '<div class="pay-row"><span class="lbl">Al recibir (26 Mayo 2026)</span><span class="amt">USD 1,250</span></div>';
-      html += '<div class="pay-row"><span class="lbl">Total</span><span class="amt">USD 1,550</span></div>';
-    } else {
-      html += '<div class="pay-row"><span class="lbl">Al recibir (26 Mayo 2026)</span><span class="amt">USD 675</span></div>';
-      html += '<div class="pay-row"><span class="lbl">3 semanas despues</span><span class="amt">USD 675</span></div>';
-      html += '<div class="pay-row"><span class="lbl">Total</span><span class="amt">USD 1,650</span></div>';
-    }
-    document.getElementById('pay-summary').innerHTML = html;
-    var m = document.getElementById('modal');
-    m.style.visibility = 'visible';
-    m.style.opacity = '1';
-    m.style.pointerEvents = 'all';
+    selectedPlan = plan;
+    document.getElementById('modal-badge').textContent = 'Plan ' + plans[plan].name;
+    updateSummary();
+    document.getElementById('modal').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
-    var m = document.getElementById('modal');
-    m.style.visibility = 'hidden';
-    m.style.opacity = '0';
-    m.style.pointerEvents = 'none';
+    document.getElementById('modal').classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  function selectMethod(met) {
-    selMethod = met;
-    document.getElementById('btn-zelle').className = 'method-btn' + (met === 'zelle' ? ' selected' : '');
-    document.getElementById('btn-oshop').className = 'method-btn' + (met === 'oshop' ? ' selected' : '');
-    document.getElementById('btn-nella').className = 'method-btn' + (met === 'nella' ? ' selected' : '');
+  function selectMethod(m) {
+    selectedMethod = m;
+    ['zelle','oshop','nella'].forEach(id => document.getElementById('btn-' + id).classList.toggle('selected', m === id));
+  }
+
+  function updateSummary() {
+    const p = plans[selectedPlan];
+    let html = p.steps.map(s => `<div class="pay-row"><span class="lbl">${s.label}</span><span class="amt">${s.amount}</span></div>`).join('');
+    html += `<div class="pay-row"><span class="lbl">Total</span><span class="amt">${p.total}</span></div>`;
+    document.getElementById('pay-summary').innerHTML = html;
   }
 
   function enviarWhatsApp() {
-    var nombre = document.getElementById('f-nombre').value;
-    var whatsapp = document.getElementById('f-whatsapp').value;
-    var ciudad = document.getElementById('f-ciudad').value;
+    const nombre = document.getElementById('f-nombre').value.trim();
+    const whatsapp = document.getElementById('f-whatsapp').value.trim();
+    const ciudad = document.getElementById('f-ciudad').value.trim();
     if (!nombre || !whatsapp || !ciudad) { alert('Por favor completa todos los campos.'); return; }
-    var planName = selPlan === 'contado' ? 'Contado (,550)' : 'Financiado (,650)';
-    var metodos = { zelle: 'Zelle - Esbuco2003@gmail.com', oshop: 'Efectivo C.C Cima (Alto Barinas)', nella: 'Efectivo C.C Galeria La Francia (Alto Barinas)' };
-    var msg = 'Hola, quiero reservar un iPhone 17 Pro Max con Venimport!' + '%0A%0A' + 'Nombre: ' + encodeURIComponent(nombre) + '%0A' + 'WhatsApp: ' + encodeURIComponent(whatsapp) + '%0A' + 'Ciudad: ' + encodeURIComponent(ciudad) + '%0A%0A' + 'Plan: ' + encodeURIComponent(planName) + '%0A' + 'Pago: ' + encodeURIComponent(metodos[selMethod]);
-    window.location.href = 'https://wa.me/15737050538?text=' + msg;
+    const p = plans[selectedPlan];
+    const msg = `Hola, quiero reservar un iPhone 17 Pro Max con Venimport 📱\n\n*Mis datos:*\n• Nombre: ${nombre}\n• WhatsApp: ${whatsapp}\n• Ciudad: ${ciudad}\n\n*Plan elegido:* ${p.name} (${p.total})\n*Método de pago:* ${methods[selectedMethod]}\n\n¡Confirmo que quiero apartar mi unidad!`;
+    window.open('https://wa.me/15737050538?text=' + encodeURIComponent(msg), '_blank');
   }
 
-  document.getElementById('modal').onclick = function(e) { if (e.target === this) closeModal(); };
-</script>
-</body>
-</html>
+  document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+  document.querySelectorAll('a[href^="#
